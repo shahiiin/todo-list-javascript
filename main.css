@@ -55,7 +55,7 @@ input, button{
     color: #ec4899;
     font-size: 1.25rem;
     font-weight: 700;
-    background-image: linear-gradient(to right, #ec4899, #8b5cf6);
+    background-color:red;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     cursor: pointer;
@@ -132,10 +132,10 @@ main{
 }
 
 .task .actions .delete{
-    background-image: linear-gradient(to right, #ec4899, #8b5cf6);
+    background-color: white;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    
+  font-size: 18px;
 }
 .aside{
     border-right: 2px solid #1F2937;
