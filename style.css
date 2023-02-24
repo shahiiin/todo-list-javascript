@@ -1,9 +1,43 @@
-
-
- .cardbox {
+body {
     height: 100vh;
-    background-color: #333;
+    background-image: linear-gradient(106.9deg, rgba(148, 14, 60, 1) 60.9%, rgba(3, 22, 27, 1) 122.3%);
     padding: 10px;
+
+}
+
+/* start section operation */
+
+.operation {
+    display: flex;
+    justify-content: center;
+    height: 60px;
+}
+
+.value-item {
+    height: 36px;
+    width: 25rem;
+    border: none;
+    border-radius: 15px;
+}
+
+.add-item {
+    border: none;
+    height: 40px;
+    width: 100px;
+    border-radius: 15px;
+    margin-left: 5px;
+    background-image: radial-gradient(circle 941px at 2.6% 6.8%, rgba(124, 74, 228, 0.81) 15.9%, rgba(249, 208, 40, 0.70) 88.6%);
+    color: white;
+    font-weight: 900;
+}
+
+/* end section operation */
+
+
+
+/* start section card */
+
+.cardbox {
     display: flex;
 }
 
@@ -12,11 +46,10 @@
     border: solid #333 1px;
     border-radius: 5px;
     background-color: white;
-    height: 250px;
+    height: auto;
+    margin-left: 5px
 }
-.card-header{
-    background-color: red;
-}
+
 .card-body {
     padding: 10px;
 }
@@ -32,6 +65,19 @@
 .blue {
     color: #0022ee;
 }
-button{
-    border: none;
+
+
+.user-id {
+    color: red;
 }
+
+.user-room {
+    color: yellow;
+}
+
+.user-floor {
+    color: green;
+    margin-bottom: 10px;
+}
+
+/* end section card */
