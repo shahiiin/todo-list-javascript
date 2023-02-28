@@ -1,35 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+
+    <link rel="stylesheet" href="./style.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <title>TODO</title>
-
+    <title>todolist</title>
 </head>
-
 <body>
-    <div class='operation'>
-        <input class='value-item' type="text" id='titletext' value=''>
-        <button class='add-item' onclick='addCard()'>Add card</button>
-    </div>
-
-    <div class="cardbox">
-        <div class="card">
-           
-            <div class="card-body">
-                <h3 class='card-title'>Title</h3>
-                <p class='fontbig blue'>Hello this is new card</p>
-                <p class='user-id'>id:5</p>
-                <p class='user-room'>room:12</p>
-                <p class='user-floor'>floor:4</p>
+    <header>
+        <h1>task list</h1>
+        <form id="new-task-form">
+            <input type="text" id="new-task-input"
+            placeholder="what do you have planned?">
+            <input type="submit"
+            value="Add task"
+            id="new-task-submit">
+        </form>
+    </header>
+    <main>
+        <section class="task-list">
+            <h2>tasks</h2>
+            <div id="tasks">
+                <!-- <div class="task">
+                    <div class="content">
+                        <input type="text" class="text" value="my task" readonly>
+                    </div>
+                    <div class="actions">
+                        <button class="delete">delete</button>
+                    </div>
+                </div> -->
             </div>
-        </div>
+        </section>
+    </main>
+    
 
-    </div>
-    <script src='./script.js'></script>
+
+
+
+
+
+    <script src="./script.js"></script>
 </body>
-
 </html>

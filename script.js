@@ -1,56 +1,52 @@
 
 
-function addCard() {
-    
-    const titletext = document.getElementById('titletext');
+window.addEventListener('load', () => {
+	const form = document.querySelector("#new-task-form");
+	const input = document.querySelector("#new-task-input");
+	const list_el = document.querySelector("#tasks");
 
-    const cardbox = document.querySelector('.cardbox');
+	form.addEventListener('submit', (e) => {
+		e.preventDefault();
 
-    const newcard = document.createElement('div');
+		const task = input.value;
 
-    newcard.classList.add('card');
+		const task_el = document.createElement('div');
+		task_el.classList.add('task');
 
-    const newcardbody = document.createElement('div');
+		const task_content_el = document.createElement('div');
+		task_content_el.classList.add('content');
 
-    newcardbody.classList.add('card-body');
+		task_el.appendChild(task_content_el);
 
-    const newh3 = document.createElement('h3');
+		const task_input_el = document.createElement('input');
+		task_input_el.classList.add('text');
+		task_input_el.type = 'text';
+		task_input_el.value = task;
+		task_input_el.setAttribute('readonly', 'readonly');
 
-    newh3.classList.add('card-title');
+		task_content_el.appendChild(task_input_el);
 
-    newh3.innerText = titletext.value;
+		const task_actions_el = document.createElement('div');
+		task_actions_el.classList.add('actions');
+		
 
-    const newp = document.createElement('p');
-
-    newp.classList.add(['fontbig', 'blue']);
-
-    newp.innerText = titletext.value;
-
-    const newparam1 = document.createElement('p');
-
-    newparam1.classList.add('user-id');
-
-    newparam1.innerText = titletext.value;
-
-    const newparam2 = document.createElement('p');
-
-    newparam2.classList.add('user-room');
-
-    newparam2.innerText = titletext.value;
-
-    const newparam3 = document.createElement('p');
-
-    newparam3.classList.add('user-floor');
-
-    newparam3.innerText = titletext.value;
-
-    newcardbody.appendChild(newh3);
-    newcardbody.appendChild(newp);
-    newcardbody.appendChild(newparam1);
-    newcardbody.appendChild(newparam2);
-    newcardbody.appendChild(newparam3);
-    newcard.appendChild(newcardbody);
-    cardbox.appendChild(newcard);
-}
+		const task_delete_el = document.createElement('button');
+		task_delete_el.classList.add('delete');
+		task_delete_el.innerText = 'Delete';
 
 
+		task_actions_el.appendChild(task_delete_el);
+
+		task_el.appendChild(task_actions_el);
+
+		list_el.appendChild(task_el);
+
+		input.value = '';
+
+		
+
+		task_delete_el.addEventListener('click', (e) => {
+			list_el.removeChild(task_el);
+		});
+	});
+});

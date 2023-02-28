@@ -1,83 +1,139 @@
-body {
-    height: 100vh;
-    background-image: linear-gradient(106.9deg, rgba(148, 14, 60, 1) 60.9%, rgba(3, 22, 27, 1) 122.3%);
-    padding: 10px;
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'fira sans', sans-serif;
 }
 
-/* start section operation */
-
-.operation {
+body{
     display: flex;
-    justify-content: center;
-    height: 60px;
-}
-
-.value-item {
-    height: 36px;
-    width: 25rem;
-    border: none;
-    border-radius: 15px;
-}
-
-.add-item {
-    border: none;
-    height: 40px;
-    width: 100px;
-    border-radius: 15px;
-    margin-left: 5px;
-    background-image: radial-gradient(circle 941px at 2.6% 6.8%, rgba(124, 74, 228, 0.81) 15.9%, rgba(249, 208, 40, 0.70) 88.6%);
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #374151;
     color: white;
-    font-weight: 900;
 }
 
-/* end section operation */
+header{
+    padding: 2rem 1rem;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
 
+header h1{
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    color: #6B7280;
+}
 
-
-/* start section card */
-
-.cardbox {
+#new-task-form{
     display: flex;
 }
 
-.card {
-    width:240px;
-    border: solid #333 1px;
-    border-radius: 5px;
-    background-color: white;
-    height: auto;
-    margin-left: 5px
+input, button{
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
 }
 
-.card-body {
-    padding: 10px;
-}
-
-.card-title {
-    text-align: center;
-}
-
-.fontbig {
-    font-size: 20px;
-}
-
-.blue {
-    color: #0022ee;
+#new-task-input{
+    flex: 1 1 0%;
+    background-color: #1F2937;
+    padding: 1rem;
+    border-radius: 1rem;
+    color: #eee;
+    font-size: 1.25rem;
 }
 
 
-.user-id {
-    color: red;
+#new-task-input::placeholder{
+    color: #6B7280;
 }
 
-.user-room {
-    color: yellow;
+#new-task-submit{
+    color: #ec4899;
+    font-size: 1.25rem;
+    font-weight: 700;
+    background-image: linear-gradient(to right, #ec4899, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+    transition: 0.4s;
 }
 
-.user-floor {
-    color: green;
-    margin-bottom: 10px;
+#new-task-submit:hover{
+    opacity: 0.8;
 }
 
-/* end section card */
+#new-task-submit:active{
+    opacity: 0.6;
+}
+
+main{
+    flex: 1 1 0%;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.task-list{
+    padding: 1rem;
+}
+.task-list h2{
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #6B7280;
+    margin-bottom: 1rem;
+}
+
+#tasks .task{
+    display: flex;
+    justify-content: space-between;
+    background-color: #111827;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+#tasks .task .content .text{
+    color: #eee;
+    font-size: 1.125rem;
+    width: 100%;
+    display: block;
+    transition: 0.4s;
+}
+
+#tasks .task .content .text:not(:read-only) {
+    color: #ec4899;
+}
+
+#tasks .task .actions{
+    display: flex;
+    margin: 0 -0.5rem;
+}
+
+.task .actions button{
+    cursor: pointer;
+    margin: 0 0.5rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.4s;
+}
+
+.task .actions button:hover{
+    opacity: 0.8;
+}
+
+.task .actions button:active{
+    opacity: 0.6;
+}
+
+.task .actions .delete{
+    background-image: linear-gradient(to right, #ec4899, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+}
