@@ -1,20 +1,3 @@
 {
-  "user": [
-    {
-      "name": "sfasdf",
-      "id": 1
-    },
-    {
-      "name": "sdfdasf",
-      "id": 4
-    },
-    {
-      "name": "sadfasf",
-      "id": 5
-    },
-    {
-      "name": "asfsfsfdaf",
-      "id": 6
-    }
-  ]
+  "user": []
 }
