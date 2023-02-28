@@ -66,15 +66,13 @@ form.addEventListener('submit', (e) => {
 })
 
 function data() {
-	const task = input.value;
+	
 	fetch('http://localhost:3000/user', {
 		method: "post",
 		headers: {
 			'Content-Type': 'application/json',
 		},
-		body:{
-			name:task
-		}
+		body:JSON.stringify()
 	})
 		.then(res => console.log(res))
 		.then(err => {
