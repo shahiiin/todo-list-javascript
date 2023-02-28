@@ -1,13 +1,11 @@
-
-
 // window.addEventListener('load', () => {
 // 	const form = document.querySelector("#new-task-form");
 // 	const input = document.querySelector("#new-task-input");
-// 	const list_el = document.querySelector("#tasks");
+
 
 // 	form.addEventListener('submit', (e) => {
 // 		e.preventDefault();
-// 		data()
+
 
 // 		const task = input.value;
 
@@ -45,7 +43,6 @@
 // 		input.value = '';
 
 
-
 // 		task_delete_el.addEventListener('click', (e) => {
 // 			list_el.removeChild(task_el);
 // 		});
@@ -53,35 +50,78 @@
 // });
 
 
+
+
 window.addEventListener('load', () => {
 
-const form = document.querySelector("#new-task-form");
-const input = document.querySelector("#new-task-input");
+	const form = document.querySelector("#new-task-form");
+	const list_el = document.querySelector("#tasks");
+
+	form.addEventListener('submit', (e) => {
+		e.preventDefault();
+
+		const input = document.querySelector("#new-task-input");
 
 
-form.addEventListener('submit', (e) => {
-	e.preventDefault();
-	data()
+		const task = input.value;
+		const task_el = document.createElement('div');
+		task_el.classList.add('task');
 
-})
+		const task_content_el = document.createElement('div');
+		task_content_el.classList.add('content');
 
-function data() {
-	
-	fetch('http://localhost:3000/user', {
-		method: "post",
-		headers: {
-			'Content-Type': 'application/json',
-		},
-		body:JSON.stringify()
+		task_el.appendChild(task_content_el);
+		const task_input_el = document.createElement('input');
+		task_input_el.classList.add('text');
+		task_input_el.type = 'text';
+		task_input_el.value = task;
+		task_input_el.setAttribute('readonly', 'readonly');
+
+		task_content_el.appendChild(task_input_el);
+
+		const task_actions_el = document.createElement('div');
+		task_actions_el.classList.add('actions');
+
+		const task_delete_el = document.createElement('button');
+		task_delete_el.classList.add('delete');
+		task_delete_el.innerText = 'Delete';
+
+		task_actions_el.appendChild(task_delete_el);
+
+		task_el.appendChild(task_actions_el);
+
+		list_el.appendChild(task_el);
+
+		input.value = '';
+
+		task_delete_el.addEventListener('click', (e) => {
+						list_el.removeChild(task_el);
+					});
+
+		data(input.value);
 	})
-		.then(res => console.log(res))
-		.then(err => {
-			console.log(err, 'data is undifind')
+
+	function data(task) {
+		fetch('http://localhost:3000/user', {
+			method: "POST",
+			headers: {
+				'Accept': 'application/json',
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({
+				name: task,
+			})
 		})
+			.then(res => console.log(res.json()))
+			.catch(err => {
+				console.log(err, 'data is undifind')
+			})
 
-}
-
+	}
 })
+
+
+
 
 
 
