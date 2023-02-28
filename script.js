@@ -1,5 +1,3 @@
-
-
 // window.addEventListener('load', () => {
 // 	const form = document.querySelector("#new-task-form");
 // 	const input = document.querySelector("#new-task-input");
@@ -45,7 +43,6 @@
 // 		input.value = '';
 
 
-
 // 		task_delete_el.addEventListener('click', (e) => {
 // 			list_el.removeChild(task_el);
 // 		});
@@ -54,34 +51,33 @@
 
 
 window.addEventListener('load', () => {
+  const form = document.querySelector("#new-task-form");
 
-const form = document.querySelector("#new-task-form");
-const input = document.querySelector("#new-task-input");
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
 
+    const input = document.querySelector("#new-task-input");
 
-form.addEventListener('submit', (e) => {
-	e.preventDefault();
-	data()
+    data(input.value);
+  })
 
-})
+  function data(task) {
+    fetch('http://localhost:3000/user', {
+      method: "POST",
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        name: task,
+      })
+    })
+      .then(res => console.log(res.json()))
+      .catch(err => {
+        console.log(err, 'data is undifind')
+      })
 
-function data() {
-	const task = input.value;
-	fetch('http://localhost:3000/user', {
-		method: "post",
-		headers: {
-			'Content-Type': 'application/json',
-		},
-		body:{
-			name:task
-		}
-	})
-		.then(res => console.log(res))
-		.then(err => {
-			console.log(err, 'data is undifind')
-		})
-
-}
+  }
 
 })
 
