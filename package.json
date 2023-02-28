@@ -1,0 +1,23 @@
+{
+  "name": "todo-list-javascript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "start": "json-server --watch ./database/db.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shahiiin/todo-list-javascript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shahiiin/todo-list-javascript/issues"
+  },
+  "homepage": "https://github.com/shahiiin/todo-list-javascript#readme",
+  "dependencies": {
+    "json-server": "^0.17.2"
+  }
+}

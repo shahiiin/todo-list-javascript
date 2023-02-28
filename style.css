@@ -1,11 +1,10 @@
-
 * {
     box-sizing: border-box;
     margin: 0;
     font-family: 'fira sans', sans-serif;
 }
 
-body{
+body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -13,32 +12,33 @@ body{
     color: white;
 }
 
-header{
+header {
     padding: 2rem 1rem;
     max-width: 800px;
     width: 100%;
     margin: 0 auto;
 }
 
-header h1{
+header h1 {
     font-size: 2.5rem;
     font-weight: 300;
     margin-bottom: 1rem;
     color: #6B7280;
 }
 
-#new-task-form{
+#new-task-form {
     display: flex;
 }
 
-input, button{
+input,
+button {
     appearance: none;
     border: none;
     outline: none;
     background: none;
 }
 
-#new-task-input{
+#new-task-input {
     flex: 1 1 0%;
     background-color: #1F2937;
     padding: 1rem;
@@ -48,11 +48,11 @@ input, button{
 }
 
 
-#new-task-input::placeholder{
+#new-task-input::placeholder {
     color: #6B7280;
 }
 
-#new-task-submit{
+#new-task-submit {
     color: #ec4899;
     font-size: 1.25rem;
     font-weight: 700;
@@ -63,32 +63,45 @@ input, button{
     transition: 0.4s;
 }
 
-#new-task-submit:hover{
+#new-task-submit:hover {
     opacity: 0.8;
 }
 
-#new-task-submit:active{
+#new-task-submit:active {
     opacity: 0.6;
 }
 
-main{
+main {
     flex: 1 1 0%;
     max-width: 800px;
     width: 100%;
     margin: 0 auto;
+    
+}
+.aside{
+    border-right:solid 1px rgba(177,36,224,1) ;
+    background-image: linear-gradient( 132.6deg,  rgba(71,139,214,1) 23.3%, rgba(37,216,211,1) 84.7% );
+    height: 100vh;
+    padding: 20px;
+}
+.main-page{
+    background-image: linear-gradient( 65.9deg,  rgba(85,228,224,1) 5.5%, rgba(75,68,224,0.74) 54.2%, rgba(64,198,238,1) 55.2%, rgba(177,36,224,1) 98.4% );
 }
 
-.task-list{
+.task-list {
     padding: 1rem;
 }
-.task-list h2{
-    font-size: 1.5rem;
-    font-weight: 300;
-    color: #6B7280;
-    margin-bottom: 1rem;
+
+.task-list h1 {
+  
+        font-size: 2.5rem;
+        font-weight: 300;
+        margin-bottom: 1rem;
+        color: #6B7280;
+    
 }
 
-#tasks .task{
+#tasks .task {
     display: flex;
     justify-content: space-between;
     background-color: #111827;
@@ -97,7 +110,7 @@ main{
     margin-bottom: 1rem;
 }
 
-#tasks .task .content .text{
+#tasks .task .content .text {
     color: #eee;
     font-size: 1.125rem;
     width: 100%;
@@ -109,12 +122,12 @@ main{
     color: #ec4899;
 }
 
-#tasks .task .actions{
+#tasks .task .actions {
     display: flex;
     margin: 0 -0.5rem;
 }
 
-.task .actions button{
+.task .actions button {
     cursor: pointer;
     margin: 0 0.5rem;
     font-size: 1.125rem;
@@ -123,17 +136,17 @@ main{
     transition: 0.4s;
 }
 
-.task .actions button:hover{
+.task .actions button:hover {
     opacity: 0.8;
 }
 
-.task .actions button:active{
+.task .actions button:active {
     opacity: 0.6;
 }
 
-.task .actions .delete{
+.task .actions .delete {
     background-image: linear-gradient(to right, #ec4899, #8b5cf6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    
+
 }
